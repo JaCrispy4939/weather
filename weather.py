@@ -32,10 +32,10 @@ def printTodaysWeather():
     today = date.today()
     # dd/mm/YY
     d1 = today.strftime("%m/%d/%Y")
-
+    os.system("cls")
     print("Date: " + d1)
     print("Location: " + str(location))
-    print(current_state)
+    print("Current State: " + current_state)
     print("Rain: " + str(current_precip))
     print("Current Temp: " + current_temperature)
     print("Current Realfeel: " + current_realfeel)
@@ -43,5 +43,22 @@ def printTodaysWeather():
     print("High/Low: " + current_high + " / " + current_low)
     print("Sunrise Time: " + str(sunrise_time))
     print("Sunset Time: " + str(sunset_time))
-    
+
+    choice = input("\n1. Update 2. Exit\nOption: ")
+    if choice == "1":
+        print("Updating")
+        time.sleep(.5)
+        print(".")
+        time.sleep(.5)
+        print("..")
+        time.sleep(.5)
+        print("...")
+        time.sleep(.5)
+        printTodaysWeather()
+    elif choice == "2":
+        print("Exiting")
+        time.sleep(2)
+        os.system("cls")
+        quit()
+
 printTodaysWeather()
